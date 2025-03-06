@@ -5,6 +5,7 @@ import { Stack } from 'expo-router'
  * Se crea una pila de paginas una sobre la otra
  */
 const RootLayout = () => {
+    // Layout raiz de la aplicacion
     // `screenOptions` permite definir estilos para en encabezado de la pagina
     return (
         <Stack
@@ -25,6 +26,9 @@ const RootLayout = () => {
             }}
         >
             <Stack.Screen name="index" options={{ title: 'Home' }} />
+
+            {/* Personalizar el encabezado de la subpagina llamada `notes` */}
+            <Stack.Screen name="notes" options={{ headerTitle: 'NOTES' }} />
         </Stack>
     )
 }
