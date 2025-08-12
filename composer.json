@@ -1,0 +1,15 @@
+{
+    "name": "php/notes",
+    "autoload": {
+        "psr-4": {
+            "Php\\Notes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Martin Wilches",
+            "email": "martindotdev@gmail.com"
+        }
+    ],
+    "require": {}
+}
