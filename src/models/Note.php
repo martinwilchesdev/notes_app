@@ -1,6 +1,8 @@
 <?php
 
 namespace Php\Notes\models;
+
+use PDO;
 use Php\Notes\lib\Database;
 
 class Note extends Database {
@@ -42,7 +44,33 @@ class Note extends Database {
 
         $query->execute([ 'uuid' => $uuid ]);
 
-        $note = new Note();
+        $note = Note::createFromArray($query->fetch(PDO::FETCH_ASSOC));
+
+        return $note;
+    }
+
+    // obtener todas las notas
+    static function getAll() {
+        $db = new Database();
+        $query = $db->connect()->prepare('SELECT * FROM notes');
+
+        $notes = [];
+
+        $query->execute();
+
+        while($r = $query->fetch(PDO::FETCH_ASSOC)) {
+            $note = Note::createFromArray($r);
+            array_push($notes, $note);
+        }
+
+        return $notes;
+    }
+
+    static function createFromArray($arr) {
+        $note = new Note($arr['title'], $arr['content']);
+        $note->setUuid($arr['uuid']);
+
+        return $note;
     }
 
     // getter uuid
@@ -53,5 +81,9 @@ class Note extends Database {
     // setter uuid
     public function setUuid($value) {
         $this->uuid = $value;
+    }
+
+    public function getTitle() {
+        return $this->title;
     }
 }

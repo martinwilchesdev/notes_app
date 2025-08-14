@@ -1,3 +1,9 @@
+<?php
+use Php\Notes\models\Note;
+
+$notes = Note::getAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +13,11 @@
 </head>
 <body>
     <h1>Home</h1>
+
+    <?php
+    foreach($notes as $note) {
+        echo "<div>{$note->getTitle()}</div>";
+    }
+    ?>
 </body>
 </html>
