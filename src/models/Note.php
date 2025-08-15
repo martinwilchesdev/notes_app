@@ -43,7 +43,7 @@ class Note extends Database {
         $db = new Database();
         $query = $db->connect()->prepare('SELECT * FROM notes WHERE uuid = :uuid');
 
-        $query->execute(['uuid' => '689d4d88ccc4c']);
+        $query->execute(['uuid' => $uuid]);
 
         $note = Note::createFromArray($query->fetch(PDO::FETCH_ASSOC));
 
