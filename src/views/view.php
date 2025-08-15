@@ -1,3 +1,13 @@
+<?php
+use Php\Notes\models\Note;
+
+if (isset($_GET['id'])) {
+    $note = Note::get($_GET['id']);
+} else {
+    header('Location: http://localhost/notes_app/?view=home');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +16,6 @@
     <title>View</title>
 </head>
 <body>
-    <h1>View</h1>
+    <?php echo $note->getTitle(); ?>
 </body>
 </html>
