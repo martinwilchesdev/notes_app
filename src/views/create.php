@@ -3,8 +3,8 @@
 use Php\Notes\models\Note;
 
 if (count($_POST) > 0) {
-    $title = $_POST['title'] ?? '';
     $content = $_POST['content'] ?? '';
+    $title = $_POST['title'] ?? '';
 
     $note = new Note($title, $content);
     $note->save();

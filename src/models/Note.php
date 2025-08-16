@@ -87,4 +87,16 @@ class Note extends Database {
     public function getTitle() {
         return $this->title;
     }
+
+    public function setTitle($value) {
+        $this->title = $value;
+    }
+
+    public function getContent() {
+        return $this->content;
+    }
+
+    public function setContent($value) {
+        $this->content = $value;
+    }
 }

@@ -15,7 +15,7 @@ $notes = Note::getAll();
     <h1>Home</h1>
 
     <?php foreach($notes as $note): ?>
-        <a href="?view=view&id=<?php echo $note->getUuid(); ?>">
+        <a href="?view=view&uuid=<?php echo $note->getUuid(); ?>">
             <div class="note-preview">
                 <div class="title"><?php echo $note->getTitle(); ?></div>
             </div>
