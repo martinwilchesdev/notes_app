@@ -16,15 +16,19 @@ if (count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/views/resources/main.css">
     <title>Create</title>
 </head>
 <body>
-    <h1>Create note</h1>
+    <main>
+        <h1>Create note</h1>
 
-    <form action="?view=create" method="POST">
-        <input type="text" name="title" id="title" placeholder="Title...">
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        <button type="submit">Create Note</button>
-    </form>
+        <form action="?view=create" method="POST">
+            <input type="text" name="title" id="title" placeholder="Title...">
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <button type="submit">Create Note</button>
+        </form>
+        <a href="?view=home" class="btn">Back</a>
+    </main>
 </body>
 </html>
