@@ -24,14 +24,18 @@ if (count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/views/resources/main.css">
     <title>View</title>
 </head>
 <body>
-    <form action="?view=view&uuid=<?php echo $note->getUuid(); ?>" method="POST">
-        <input type="text" name="title" id="title" placeholder="Title..." value="<?php echo $note->getTitle(); ?>">
-        <textarea name="content" id="content" cols="30" rows="10"><?php echo $note->getContent(); ?></textarea>
-        <input type="hidden" name="uuid" value="<?php echo $note->getUuid(); ?>">
-        <button type="submit">Update Note</button>
-    </form>
+    <main>
+        <form action="?view=view&uuid=<?php echo $note->getUuid(); ?>" method="POST">
+            <input type="text" name="title" id="title" placeholder="Title..." value="<?php echo $note->getTitle(); ?>">
+            <textarea name="content" id="content" cols="30" rows="10"><?php echo $note->getContent(); ?></textarea>
+            <input type="hidden" name="uuid" value="<?php echo $note->getUuid(); ?>">
+            <button type="submit">Update Note</button>
+        </form>
+        <a href="?view=home" class="btn">Back</a>
+    </main>
 </body>
 </html>
