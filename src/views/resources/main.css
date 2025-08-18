@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', monospace;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* home */
+.home-card__container {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 50px;
+}
+
+.home-card__container h2 {
+    font-size: 2.5rem;
+}
+
+.home-card__container p {
+    font-size: 1.2rem;
+}
+
+.home-card {
+    flex: 1;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, .6);
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #000;
+}
